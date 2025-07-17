@@ -12,6 +12,7 @@ import { EnhancedClassTypeSelection } from './components/EnhancedClassTypeSelect
 import { EnhancedFeedbackOverview } from './components/EnhancedFeedbackOverview'
 import { CandidateManagement } from './components/CandidateManagement'
 import { SessionsPage } from './components/SessionsPage'
+import { SessionsPage } from './components/SessionsPage'
 import { AllFeedbackPage } from './components/AllFeedbackPage'
 
 function App() {

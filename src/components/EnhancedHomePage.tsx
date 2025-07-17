@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { MessageSquare, Shield, Trophy, HandHeart, ArrowRight, Sparkles, BookOpen, CheckSquare, Users, BarChart3 } from 'lucide-react'
+import { MessageSquare, Shield, Trophy, HandHeart, ArrowRight, Sparkles, BookOpen, CheckSquare, Users, BarChart3, Calendar } from 'lucide-react'
 import { VanguardScene } from './3D/VanguardScene'
 
 export const EnhancedHomePage: React.FC = () => {
@@ -243,7 +243,7 @@ export const EnhancedHomePage: React.FC = () => {
 
           {/* Action Cards Grid */}
           <motion.div 
-            className="grid md:grid-cols-2 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -291,6 +291,58 @@ export const EnhancedHomePage: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <span className="text-lg">Access Feedback System</span>
+                  <motion.div
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <ArrowRight className="w-6 h-6" />
+                  </motion.div>
+                </motion.button>
+              </Link>
+            </motion.div>
+
+            {/* Sessions Card */}
+            <motion.div 
+              className="bg-gradient-to-br from-black/40 to-green-900/20 backdrop-blur-xl rounded-3xl p-12 shadow-2xl border border-green-500/20 text-center"
+              variants={itemVariants}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <motion.div 
+                className="w-20 h-20 bg-green-500/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mb-8 mx-auto border border-green-500/30 relative"
+                animate={{
+                  boxShadow: [
+                    "0 0 20px rgba(34, 197, 94, 0.3)",
+                    "0 0 40px rgba(34, 197, 94, 0.5)",
+                    "0 0 20px rgba(34, 197, 94, 0.3)"
+                  ]
+                }}
+                transition={{ duration: 2, repeat: Infinity, delay: 2 }}
+              >
+                <motion.div
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.6 }}
+                  className="absolute inset-0 rounded-3xl"
+                />
+                <CheckSquare className="w-10 h-10 text-green-400 relative z-10" />
+              </motion.div>
+              
+              <h3 className="text-3xl font-bold text-white mb-6">Sessions Management</h3>
+              <p className="text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed text-lg">
+                Interactive checklist-based session management with structured feedback tracking for lectures and candidate requirements.
+              </p>
+              
+              <Link to="/sessions">
+                <motion.button
+                  className="inline-flex items-center gap-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-bold px-10 py-5 rounded-2xl shadow-lg shadow-green-500/25 border border-green-500/30 transition-all duration-300"
+                  whileHover={{ 
+                    scale: 1.05, 
+                    y: -3,
+                    boxShadow: "0 20px 40px rgba(34, 197, 94, 0.4)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="text-lg">Manage Sessions</span>
                   <motion.div
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
